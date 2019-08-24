@@ -1,0 +1,85 @@
+Basic SQL Commands
+
+
+1. CREATE: It is used to create a new table in the database.
+Syntax:
+        CREATE TABLE TABLE_NAME (COLUMN_NAME DATATYPES[,....]);  
+Example:
+CREATE TABLE EMPLOYEE(Name VARCHAR2(20), Email VARCHAR2(100), DOB DATE);
+
+2. DROP: It is used to delete both the structure and record stored in the table.
+Syntax:
+DROP TABLE ;  
+Example:
+DROP TABLE EMPLOYEE;  
+
+3. ALTER: It is used to alter the structure of the database. This change could be either to modify the 
+            characteristics of an existing attribute or probably to add a new attribute.
+Syntax:
+	   To add a new column in the table
+        ALTER TABLE table_name ADD column_name COLUMN-definition;    
+	   To modify existing column in the table
+        ALTER TABLE MODIFY(COLUMN DEFINITION....);  
+Example:
+        ALTER TABLE STU_DETAILS ADD(ADDRESS VARCHAR2(20));  
+ALTER TABLE STU_DETAILS MODIFY (NAME VARCHAR2(20));  
+
+4. TRUNCATE: It is used to delete all the rows from the table and free the space containing the table.
+Syntax:
+        TRUNCATE TABLE table_name;  
+Example:
+        TRUNCATE TABLE EMPLOYEE;  
+
+5. INSERT: The INSERT statement is a SQL query. It is used to insert data into the row of a table.
+Syntax:
+        INSERT INTO TABLE_NAME(col1, col2, col3,.... col N) VALUES (value1, value2, value3, .... Value n);  
+Or
+        INSERT INTO TABLE_NAME VALUES (value1, value2, value3, .... Value n);    
+Example:
+        INSERT INTO javatpoint (Author, Subject) VALUES ("Sonoo", "DBMS");  
+
+6. UPDATE: This command is used to update or modify the value of a column in the table.
+Syntax:
+        UPDATE table_name SET[column_name1=value1,...column_nameN=valueN][WHERE CONDITION]  
+Example:
+        UPDATE students SET User_Name = 'Sonoo' WHERE Student_Id = '3' 
+ 
+7. DELETE: It is used to remove one or more row from a table.
+Syntax:
+        DELETE FROM table_name [WHERE condition];  
+Example:
+        DELETE FROM javatpoint  WHERE Author="Sonoo";  
+
+8. GRANT: It is used to give user access privileges to a database.
+Example:
+        GRANT SELECT, UPDATE ON MY_TABLE TO SOME_USER, ANOTHER_USER;  
+
+9. REVOKE: It is used to take back permissions from the user.
+Example:
+        REVOKE SELECT, UPDATE ON MY_TABLE FROM USER1, USER2;  
+
+10. COMMIT: Commit command is used to save all the transactions to the database.
+Syntax:
+        COMMIT;  
+Example:
+        DELETE FROM CUSTOMERS WHERE AGE = 25;  
+        COMMIT;  
+
+11. ROLLBACK: Rollback command is used to undo transactions that have not already been saved to the 
+              database.
+Syntax:
+        ROLLBACK;  
+Example:
+        DELETE FROM CUSTOMERS WHERE AGE = 25; 
+        ROLLBACK;  
+
+12. SELECT: This is the same as the projection operation of relational algebra. It is used to select the 
+              attribute based on the condition described by WHERE clause.
+Syntax:
+        SELECT expressions FROM TABLES WHERE conditions;  
+Example:
+        SELECT emp_name FROM employee WHERE age > 20;  
+      or
+        SELECT * FROM employee; (Displays full table)
+        
+----------------------------------------------------------------------------------------------------------------------------------------
